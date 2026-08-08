@@ -1,8 +1,7 @@
 # Jelly FastMCP
 
 A FastMCP-based Model Context Protocol (MCP) server for the [Jelly API](https://letsjelly.com/help/advanced/api).
-It exposes the API as MCP tools for working with conversations, labels, contacts, drafts,
-autoresponder settings, comments, and more.
+It exposes the API as MCP tools for creating, reading, updating, and managing conversations, labels, contacts, drafts, autoresponder settings, comments, and more.
 
 ## Prerequisites
 
@@ -11,7 +10,7 @@ autoresponder settings, comments, and more.
 
 ## Configuration
 
-Set your API token in the environment:
+Configure the following environment variables to authenticate and set defaults:
 
 | Environment Variable | Description |
 | --- | --- |
@@ -32,18 +31,18 @@ uv run server.py
 uv pip install -e .
 ```
 
-This registers the `jelly-fastmcp` command.
+This registers the `jelly-mcp` command.
 
 ## Claude Desktop example
 
 ```json
 {
   "mcpServers": {
-    "jelly-fastmcp": {
+    "jelly-mcp": {
       "command": "uv",
       "args": [
         "--directory",
-        "/Users/josh/.agents/Jelly-FastMCP",
+        "$HOME/.agents/Jelly-FastMCP",
         "run",
         "server.py"
       ],

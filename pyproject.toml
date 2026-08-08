@@ -1,5 +1,5 @@
 [project]
-name = "jelly-fastmcp"
+name = "jelly-mcp"
 version = "0.1.0"
 description = "FastMCP server for the Jelly API"
 readme = "README.md"
@@ -13,7 +13,7 @@ dependencies = [
 ]
 
 [project.scripts]
-jelly-fastmcp = "jelly_mcp:main"
+jelly-mcp = "jelly_mcp:main"
 
 [build-system]
 requires = ["uv_build>=0.12.1,<0.13.0"]
