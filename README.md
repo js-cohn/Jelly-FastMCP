@@ -35,16 +35,18 @@ This registers the `jelly-mcp` command.
 
 ## Claude Desktop example
 
+To use this with Claude Desktop (or other MCP hosts), add the following configuration. 
+
+Using `sh -c` allows the use of `$HOME` (or other environment variables) dynamically across different user machines/setups, since most MCP hosts do not perform shell expansion on paths:
+
 ```json
 {
   "mcpServers": {
     "LetsJelly": {
-      "command": "uv",
+      "command": "sh",
       "args": [
-        "--directory",
-        "$HOME/.agents/Jelly-FastMCP",
-        "run",
-        "server.py"
+        "-c",
+        "uv --directory \"$HOME/.agents/Jelly-FastMCP\" run server.py"
       ],
       "env": {
         "JELLY_API_TOKEN": "your-api-token-here"
@@ -53,6 +55,8 @@ This registers the `jelly-mcp` command.
   }
 }
 ```
+
+*Note: If you prefer not to use `sh -c`, replace `"command"` with `"uv"` and use the absolute path in the `"--directory"` argument.*
 
 ## Available tools
 
