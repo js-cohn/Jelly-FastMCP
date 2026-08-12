@@ -38,7 +38,7 @@ This registers the `jelly-mcp` command.
 ```json
 {
   "mcpServers": {
-    "jelly-mcp": {
+    "LetsJelly": {
       "command": "uv",
       "args": [
         "--directory",
